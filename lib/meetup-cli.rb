@@ -12,7 +12,7 @@ end
 
 begin
   $config = YAML.load_file(CONFIG_FILE)
-  throw if $config['api_key'].nil? || $config['member_id'].nil?
+  throw if $config['api_key'].nil?
 rescue
   puts <<-EOM
 It looks like you are running #{APP_NAME} for the first time.
@@ -22,7 +22,6 @@ Obtain an API key from: https://secure.meetup.com/meetup_api/key/
 And save the following in ~/.#{APP_NAME}rc:
 
 api_key: <api-key>
-member_id: <member-id>
   EOM
   exit 0
 end
@@ -39,7 +38,7 @@ puts "Your upcoming events:"
 puts
 
 client.fetch(:events, {
-    member_id: $config['member_id'],
+    member_id: 'self',
     rsvp: 'yes'
 }).each do |res|
   puts "#{res.name}"

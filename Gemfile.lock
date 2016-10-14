@@ -28,6 +28,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  gli
   rMeetup
 
 BUNDLED WITH

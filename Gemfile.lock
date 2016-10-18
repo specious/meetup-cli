@@ -1,3 +1,10 @@
+PATH
+  remote: .
+  specs:
+    meetup-cli (1.0.3)
+      gli (= 2.14.0)
+      rMeetup (= 2.1.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -5,6 +12,7 @@ GEM
     buftok (0.2.0)
     domain_name (0.5.20160826)
       unf (>= 0.0.5, < 1.0.0)
+    gli (2.14.0)
     http (0.9.9)
       addressable (~> 2.3)
       http-cookie (~> 1.0)
@@ -28,8 +36,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  gli
-  rMeetup
+  meetup-cli!
 
 BUNDLED WITH
    1.12.5

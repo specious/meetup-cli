@@ -2,6 +2,7 @@ PATH
   remote: .
   specs:
     meetup-cli (1.0.3)
+      colorize
       gli (= 2.14.0)
       rMeetup (= 2.1.0)
 
@@ -10,6 +11,7 @@ GEM
   specs:
     addressable (2.4.0)
     buftok (0.2.0)
+    colorize (0.8.1)
     domain_name (0.5.20160826)
       unf (>= 0.0.5, < 1.0.0)
     gli (2.14.0)

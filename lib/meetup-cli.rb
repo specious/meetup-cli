@@ -1,5 +1,6 @@
 require 'gli'
 require 'yaml'
+require 'colorize'
 require 'meetup-cli/api'
 require 'meetup-cli/version'
 
@@ -14,6 +15,8 @@ default_command :upcoming
 pre do
   # Do not print stack trace when terminating due to a broken pipe
   Signal.trap "SIGPIPE", "SYSTEM_DEFAULT"
+
+  String.disable_colorization(true) unless STDOUT.isatty
 
   begin
     $config = YAML.load_file(CONFIG_FILE)
@@ -48,15 +51,11 @@ end
 desc "List your upcoming meetups (default command)"
 command :upcoming do |c|
   c.action do
-    puts "Your upcoming events:"
-    puts "---"
-    puts
-
     MCLI::get_upcoming_events.each do |event|
-      puts "#{event.name}"
-      puts "  URL: #{event.event_url}"
-      puts "  Date: #{date_str(event.time)}"
-      puts "  Where: #{event.venue.address_1}, #{event.venue.city}, #{event.venue.state}"
+      puts "#{event.name.light_blue}"
+      puts "  #{"URL:".magenta} #{event.event_url}"
+      puts "  #{"Date:".magenta} #{date_str(event.time)}"
+      puts "  #{"Where:".magenta} #{event.venue.address_1}, #{event.venue.city}, #{event.venue.state} (#{event.venue.name.colorize(:green)})"
       puts
     end
   end

@@ -16,6 +16,7 @@ Gem::Specification.new do |s|
   s.executables   = ['meetup-cli']
   s.homepage      = 'https://github.com/specious/meetup-cli'
 
-  s.add_dependency "gli", "= 2.14.0"
-  s.add_dependency "rMeetup", "= 2.1.0"
+  s.add_dependency "gli", "~> 2.14"
+  s.add_dependency "colorize", "~> 0.8"
+  s.add_dependency "rMeetup", "~> 2.1"
 end

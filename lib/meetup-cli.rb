@@ -52,7 +52,7 @@ desc "List your upcoming meetups (default command)"
 command :upcoming do |c|
   c.action do
     MCLI::get_upcoming_events.each do |event|
-      puts "#{event.name.light_blue}"
+      puts "#{event.name.light_blue}" + (/pizza/i.match(event.description) ? " 🍕" : "")
       puts "  #{"URL:".magenta} #{event.event_url}"
       puts "  #{"Date:".magenta} #{date_str(event.time)}"
       puts "  #{"Where:".magenta} #{event.venue.address_1}, #{event.venue.city}, #{event.venue.state} (#{event.venue.name.colorize(:green)})"

@@ -12,11 +12,13 @@ program_desc "Meetup command line interface"
 version MCLI::VERSION
 default_command :upcoming
 
-pre do
+switch [:color], :desc => 'Force colorized output', :negatable => false
+
+pre do |global_options|
   # Do not print stack trace when terminating due to a broken pipe
   Signal.trap "SIGPIPE", "SYSTEM_DEFAULT"
 
-  String.disable_colorization(true) unless STDOUT.isatty
+  String.disable_colorization(true) unless STDOUT.isatty or global_options['color']
 
   begin
     $config = YAML.load_file(CONFIG_FILE)

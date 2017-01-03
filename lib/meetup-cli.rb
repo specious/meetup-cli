@@ -12,7 +12,7 @@ program_desc "Meetup command line interface"
 version MCLI::VERSION
 default_command :upcoming
 
-switch [:color], :desc => 'Force colorized output', :negatable => false
+switch :color, :desc => 'Force colorized output', :negatable => false
 
 pre do |global_options|
   # Do not print stack trace when terminating due to a broken pipe

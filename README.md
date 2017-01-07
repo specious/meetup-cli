@@ -10,6 +10,10 @@ Lists upcoming meetups that you have RSVP'ed to attend.  No longer is it necessa
 
 ![meetup-cli 1.0.2](https://raw.githubusercontent.com/specious/meetup-cli/master/screenshot.png)
 
+# What else does it do?
+
+Run: `meetup-cli help`
+
 # License
 
 ISC

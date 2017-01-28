@@ -1,4 +1,4 @@
-require 'rMeetup'
+require 'rmeetup'
 
 module MCLI
   def self.init_api

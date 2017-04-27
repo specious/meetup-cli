@@ -1,6 +1,6 @@
 # meetup-cli
 
-A command line interface to [Meetup.com](https://www.meetup.com/).
+An easy way to keep track of your upcoming [Meetups](https://www.meetup.com/).
 
 Get it: `gem install meetup-cli` *(might require sudo)*
 

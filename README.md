@@ -1,6 +1,6 @@
 # meetup-cli
 
-An easy way to keep track of your upcoming [Meetups](https://www.meetup.com/).
+Track and share the [Meetups](https://www.meetup.com/) you go to.
 
 Get it: `gem install meetup-cli` *(might require sudo)*
 

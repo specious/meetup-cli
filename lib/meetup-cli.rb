@@ -15,8 +15,8 @@ default_command :upcoming
 switch :color, :desc => 'Force colorized output', :negatable => false
 
 pre do |global_options|
-  # Do not print stack trace when terminating due to a broken pipe
-  Signal.trap "SIGPIPE", "SYSTEM_DEFAULT"
+  # Exit gracefully when terminating due to a broken pipe
+  Signal.trap "PIPE", "SYSTEM_DEFAULT" if Signal.list.include? "PIPE"
 
   String.disable_colorization(true) unless STDOUT.isatty or global_options['color']
 

@@ -8,7 +8,7 @@ Gem::Specification.new do |s|
   s.version       = MCLI::VERSION
   s.licenses      = ['ISC']
   s.summary       = 'Meetup command line interface'
-  s.description   = 'A rudimentary command line interface to Meetup.com'
+  s.description   = 'A basic command line interface to Meetup.com'
   s.authors       = ['Ildar Sagdejev']
   s.email         = 'specious@gmail.com'
   s.files         = Dir['lib/**/*.rb', 'bin/meetup-cli']

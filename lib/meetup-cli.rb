@@ -60,7 +60,7 @@ command :upcoming do |c|
              (/wine/i.match(event.description) ? " 🍷" : "")
       puts "  #{"URL:".magenta} #{event.event_url}"
       puts "  #{"Date:".magenta} #{date_str(event.time)}"
-      puts "  #{"Where:".magenta} #{event.venue.address_1}, #{event.venue.city}, #{event.venue.state} (#{event.venue.name.colorize(:green)})"
+      puts "  #{"Where:".magenta} #{(event.venue.name.nil? ? "Not specified" : "#{event.venue.address_1}, #{event.venue.city}, #{event.venue.state} (#{event.venue.name.colorize(:green)})")}"
       puts
     end
   end

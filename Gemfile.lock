@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    meetup-cli (1.0.9)
+    meetup-cli (1.0.10)
       colorize (~> 0.8)
       gli (~> 2.14)
       rMeetup (~> 2.1)
@@ -43,4 +43,4 @@ DEPENDENCIES
   meetup-cli!
 
 BUNDLED WITH
-   1.15.3
+   1.15.4

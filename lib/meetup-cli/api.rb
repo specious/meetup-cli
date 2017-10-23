@@ -7,7 +7,14 @@ module MCLI
     end
   end
 
+  #
+  # https://www.meetup.com/meetup_api/docs/2/events/
+
   def self.get_upcoming_events
     api = init_api.fetch(:events, {member_id: 'self', rsvp: 'yes'})
+  end
+
+  def self.get_past_events
+    api = init_api.fetch(:events, {member_id: 'self', rsvp: 'yes', status: 'past', desc: 'true'})
   end
 end

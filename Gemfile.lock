@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    meetup-cli (1.0.10)
+    meetup-cli (1.1.0)
       colorize (~> 0.8)
       gli (~> 2.14)
       rMeetup (~> 2.1)
@@ -15,7 +15,7 @@ GEM
     colorize (0.8.1)
     domain_name (0.5.20170404)
       unf (>= 0.0.5, < 1.0.0)
-    gli (2.16.1)
+    gli (2.17.0)
     http (0.9.9)
       addressable (~> 2.3)
       http-cookie (~> 1.0)

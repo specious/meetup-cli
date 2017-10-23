@@ -50,17 +50,31 @@ def date_str(date)
   date.to_time.strftime('%a, %-d %b %Y %H:%M:%S %Z')
 end
 
-desc "List your upcoming meetups (default command)"
+def print_event_details(event)
+  puts "#{event.name.light_blue}" +
+         (/pizza/i.match(event.description) ? " 🍕" : "") +
+         (/(beer|drinks)/i.match(event.description) ? " 🍺" : "") +
+         (/wine/i.match(event.description) ? " 🍷" : "")
+  puts "  #{"URL:".magenta} #{event.event_url}"
+  puts "  #{"Date:".magenta} #{date_str(event.time)}"
+  puts "  #{"Where:".magenta} #{(event.venue.name.nil? ? "Not specified" : "#{event.venue.address_1}, #{event.venue.city}, #{event.venue.state} (#{event.venue.name.colorize(:green)})")}"
+end
+
+desc "List your upcoming events (default command)"
 command :upcoming do |c|
   c.action do
     MCLI::get_upcoming_events.each do |event|
-      puts "#{event.name.light_blue}" +
-             (/pizza/i.match(event.description) ? " 🍕" : "") +
-             (/(beer|drinks)/i.match(event.description) ? " 🍺" : "") +
-             (/wine/i.match(event.description) ? " 🍷" : "")
-      puts "  #{"URL:".magenta} #{event.event_url}"
-      puts "  #{"Date:".magenta} #{date_str(event.time)}"
-      puts "  #{"Where:".magenta} #{(event.venue.name.nil? ? "Not specified" : "#{event.venue.address_1}, #{event.venue.city}, #{event.venue.state} (#{event.venue.name.colorize(:green)})")}"
+      print_event_details event
+      puts
+    end
+  end
+end
+
+desc "List your past events"
+command :past do |c|
+  c.action do
+    MCLI::get_past_events.each do |event|
+      print_event_details event
       puts
     end
   end

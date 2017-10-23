@@ -1,26 +1,42 @@
 # meetup-cli
 
-Track and share the [Meetups](https://www.meetup.com/) you go to.
+Tired of meetups clogging up your inbox? Track and share your upcoming [Meetup.com](https://www.meetup.com/) events using this command line tool.
 
 Get it: `gem install meetup-cli` *(might require sudo)*
 
-# What does it do?
+# What can you do with it?
 
-Lists upcoming meetups that you have RSVP'ed to attend.  No longer is it necessary for those invitations to clog up your inbox.
+By default, it shows your upcoming meetups:
 
 ![meetup-cli 1.0.2](screenshot.png)
 
 # What else does it do?
 
-Run: `meetup-cli help`
+Show upcoming meetups:
+
+```
+meetup-cli
+```
+
+Show past meetups in reverse chronological order:
+
+```
+meetup-cli past
+```
+
+Show version information and usage instructions
+
+```
+meetup-cli help
+```
 
 # Objective
 
-This project aims to bring some of Meetup API’s functionality to an easy-to-use UNIX command line interface.
+This project aims to make some of Meetup API’s functionality available through an easy-to-use command line interface.
 
 # Want to help?
 
-Contributions are absolutely welcome.  Please check the [issues](https://github.com/specious/meetup-cli/issues) and do feel welcome to open a pull request.
+Contributions are welcome. Please check the [issues](https://github.com/specious/meetup-cli/issues) and feel welcome to open a pull request.
 
 # License
 

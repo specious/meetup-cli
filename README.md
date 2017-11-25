@@ -12,22 +12,28 @@ By default, it shows your upcoming meetups:
 
 # What else does it do?
 
-Show upcoming meetups:
+Show upcoming meetups you're going to:
 
 ```
 meetup-cli
 ```
 
-Show past meetups in reverse chronological order:
+Show upcoming meetups you're not going to:
 
 ```
-meetup-cli past
+meetup-cli notgoing
 ```
 
-Show version information and usage instructions
+Show meetups you went to in reverse chronological order:
 
 ```
-meetup-cli help
+meetup-cli went
+```
+
+Show all the commands:
+
+```
+meetup-cli --help
 ```
 
 # Objective
@@ -36,7 +42,7 @@ This project aims to make some of Meetup API’s functionality available through
 
 # Want to help?
 
-Contributions are welcome. Please check the [issues](https://github.com/specious/meetup-cli/issues) and feel welcome to open a pull request.
+Contributions are welcome. Please check the [issues](https://github.com/specious/meetup-cli/issues) and feel free to open a pull request.
 
 # License
 
